@@ -18,7 +18,10 @@ export default {
     methods: {
         starVote(movie) {
             return Math.ceil(movie.vote_average / 2)
-        }
+        },
+        starEmpty(movie) {
+            return 5 - Math.ceil(movie.vote_average / 2)
+        },
     }
 
 }
@@ -44,7 +47,8 @@ export default {
             </div>
             <div class="vote">{{ movie.vote_average / 2 }}</div>
             <div id="index" class="d-flex star_container">
-                <font-awesome-icon icon="star" v-for="icon in this.starVote(movie)" />
+                <font-awesome-icon class="text-warning" icon="star" v-for="icon in this.starVote(movie)" />
+                <font-awesome-icon icon="star" v-for="icon in this.starEmpty(movie)" />
             </div>
 
         </li>
