@@ -1,9 +1,9 @@
 export const countryFlags = {
     en: "https://www.worldometers.info/img/flags/uk-flag.gif",
-    sp: "https://www.worldometers.info/img/flags/sp-flag.gif",
-    ch: "https://www.worldometers.info/img/flags/sp-flag.gif",
+    es: "https://www.worldometers.info/img/flags/sp-flag.gif",
+    zh: "https://www.worldometers.info/img/flags/sp-flag.gif",
     fr: "https://www.worldometers.info/img/flags/fr-flag.gif",
-    gm: "https://www.worldometers.info/img/flags/gm-flag.gif",
+    de: "https://www.worldometers.info/img/flags/gm-flag.gif",
     it: "https://www.worldometers.info/img/flags/it-flag.gif",
 
 }
