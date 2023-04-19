@@ -28,6 +28,9 @@ export default {
             <div v-if="movie.name" class="title">{{ movie.name }}</div>
             <div v-if="movie.original_title" class="original_title">{{ movie.original_title }}</div>
             <div v-if="movie.original_name" class="original_title">{{ movie.original_name }}</div>
+            <div class="Cover_container" v-if="movie.poster_path">
+                <img :src="store.image_url + movie.poster_path" alt="Cover movie">
+            </div>
             <div class="language_container">
                 <div class="flag" v-if="countryFlags[movie.original_language]">
                     <img :src="countryFlags[movie.original_language]" alt="flag_country">
