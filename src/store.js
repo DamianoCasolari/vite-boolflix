@@ -4,6 +4,7 @@ export const store = {
     nameMovie: "",
     listMovies: [],
     API_URL: "https://api.themoviedb.org",
+    language_url: "https://flagcdn.com/en/codes.json",
 
     searchMovie(url) {
         axios.all([
@@ -15,6 +16,7 @@ export const store = {
             console.log(movies);
             console.log(tv);
             this.listMovies = [...movies, ...tv]
+
         })
             .catch(err => {
                 console.error(err.message);

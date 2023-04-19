@@ -1,11 +1,16 @@
 <script>
+// import CountryFlag from 'vue-country-flag'
 import { store } from "../store.js";
+
 
 export default {
     data() {
         return {
             store
         }
+    },
+    components: {
+        // CountryFlag
     }
 }
 </script>
@@ -14,6 +19,7 @@ export default {
 <template>
     <div class="container-fluid d-flex justify-content-between">
         <nav>ciao</nav>
+        <!-- <country-flag country='it' size='big' /> -->
         <div class="profile_zone">
             <div class="form-group search_container d-flex">
                 <button for="searchInput" @click="store.searchMovie(store.API_URL)">magnifying glass</button>
