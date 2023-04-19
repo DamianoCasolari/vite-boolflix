@@ -12,10 +12,15 @@ export default {
         return {
             store,
             countryFlags,
-            isoLangs
-
+            isoLangs,
+        }
+    },
+    methods: {
+        starVote(movie) {
+            return Math.ceil(movie.vote_average / 2)
         }
     }
+
 }
 </script>
 
@@ -23,7 +28,7 @@ export default {
 
 <template>
     <ul class="row row-col-1 row-col-md-2 row-col-lg-4 row-col-xl-6  ">
-        <li class="col" v-for="movie in store.listMovies">
+        <li class="col" v-for="movie, index in store.listMovies">
             <div v-if="movie.title" class="title">{{ movie.title }}</div>
             <div v-if="movie.name" class="title">{{ movie.name }}</div>
             <div v-if="movie.original_title" class="original_title">{{ movie.original_title }}</div>
@@ -37,7 +42,11 @@ export default {
                 </div>
                 <div class="lenguage">{{ isoLangs[movie.original_language].name }}</div>
             </div>
-            <div class="vote">{{ movie.vote_average }}</div>
+            <div class="vote">{{ movie.vote_average / 2 }}</div>
+            <div id="index" class="d-flex star_container">
+                <font-awesome-icon icon="star" v-for="icon in this.starVote(movie)" />
+            </div>
+
         </li>
 
     </ul>
