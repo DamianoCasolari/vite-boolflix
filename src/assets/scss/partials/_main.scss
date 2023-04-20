@@ -5,6 +5,7 @@ main {
     background-color: $clr_primary;
     min-height: calc(100vh - 100px);
     height: 100%;
+    overflow: auto;
 
     ul {
 

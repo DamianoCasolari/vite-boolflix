@@ -4,6 +4,9 @@
 header {
     height: 100px;
     background-color: $clr_primary;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
 
     nav {
         height: 100%;
