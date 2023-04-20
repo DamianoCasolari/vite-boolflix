@@ -11,16 +11,35 @@ main {
 
         .col {
             color: $clr_light;
-            text-align: center;
             padding: 20px;
 
             .cover_movie {
                 max-width: 100%;
+                filter: brightness(20%);
             }
 
-            .flags {
-                height: 16px;
-                width: 32px;
+            // .darkcover {}
+
+            .info_container {
+                font-size: calc(16px + 0.1vw);
+                padding: 20px;
+
+
+
+                .flags {
+                    height: 25px;
+                    width: 40px;
+                    vertical-align: middle;
+                    margin-right: 15px;
+                }
+
+                .lenguage {
+                    vertical-align: middle;
+                }
+
+                .vote {
+                    margin-top: 20px;
+                }
             }
 
         }
