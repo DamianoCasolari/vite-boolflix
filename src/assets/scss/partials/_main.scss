@@ -4,6 +4,7 @@
 main {
     background-color: $clr_primary;
     min-height: calc(100vh - 100px);
+    height: 100%;
 
     ul {
 
@@ -11,14 +12,27 @@ main {
 
         .col {
             color: $clr_light;
+            margin-bottom: 20px;
             padding: 20px;
+            height: 513px;
+
+            .Cover_container img {
+                object-fit: cover;
+                object-position: top;
+                width: 342px;
+                height: 513px;
+
+            }
 
             .cover_movie {
                 max-width: 100%;
-                filter: brightness(20%);
+
             }
 
-            // .darkcover {}
+            .darkcover {
+                filter: brightness(20%);
+
+            }
 
             .info_container {
                 font-size: calc(16px + 0.1vw);
@@ -44,4 +58,30 @@ main {
 
         }
     }
+}
+
+
+// Rotation effect 
+
+.my_card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card_front,
+.card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 10px;
+}
+
+.card_back {
+    transform: rotateY(180deg);
+}
+
+.my_card:hover {
+    transform: rotateY(180deg);
 }
