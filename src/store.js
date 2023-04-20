@@ -5,7 +5,7 @@ export const store = {
     listMovies: [],
     API_URL: "https://api.themoviedb.org",
     language_url: "https://flagcdn.com/en/codes.json",
-    image_url: "https://image.tmdb.org/t/p/w500",
+    image_url: "https://image.tmdb.org/t/p/w342",
 
     searchMovie(url) {
         axios.all([

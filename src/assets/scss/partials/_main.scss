@@ -1,0 +1,28 @@
+@use "./variables.scss" as *;
+@use "./utility_selector.scss" as *;
+
+main {
+    background-color: $clr_primary;
+    min-height: calc(100vh - 100px);
+
+    ul {
+
+        padding: 0;
+
+        .col {
+            color: $clr_light;
+            text-align: center;
+            padding: 20px;
+
+            .cover_movie {
+                max-width: 100%;
+            }
+
+            .flags {
+                height: 16px;
+                width: 32px;
+            }
+
+        }
+    }
+}

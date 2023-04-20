@@ -16,8 +16,10 @@ export default {
 <template>
     <header class="container-fluid d-flex justify-content-between align-items-center">
         <nav class="d-flex align-items-center">
-            <div class="logo_container">
-                <img src="../assets/img/Netflix-Logo_preview_rev_1.png" alt="netflix">
+            <div class="logo_container d-flex justify-content-center align-items-center ">
+                <img class="bigLogo d-none d-md-inline-block" src="../assets/img/Netflix-Logo_preview_rev_1.png"
+                    alt="netflix">
+                <img class="smallLogo d-inline-block d-md-none" src="../assets/img/Netflix-Logo-2006.png" alt="netflix">
             </div>
             <div class="classes d-none d-lg-block">
 
