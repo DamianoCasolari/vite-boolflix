@@ -20,7 +20,7 @@ export default {
             return Math.ceil(movie.vote_average / 2)
         },
         starEmpty(movie) {
-            return 5 - Math.ceil(movie.vote_average / 2)
+            return 5 - Math.round(movie.vote_average / 2)
         },
     }
 
@@ -45,7 +45,7 @@ export default {
                 </div>
                 <div class="lenguage">{{ isoLangs[movie.original_language].name }}</div>
             </div>
-            <div class="vote">{{ movie.vote_average / 2 }}</div>
+            <div class="vote">{{ "Rating " + (movie.vote_average / 2).toFixed(2) }}</div>
             <div id="index" class="d-flex star_container">
                 <font-awesome-icon class="text-warning" icon="star" v-for="icon in this.starVote(movie)" />
                 <font-awesome-icon icon="star" v-for="icon in this.starEmpty(movie)" />

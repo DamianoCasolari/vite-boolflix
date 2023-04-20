@@ -3,10 +3,10 @@ import './assets/scss/app.scss'
 import App from './App.vue'
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUser, faEnvelope, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEnvelope, faStar, faSearch, faBell } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faUser, faEnvelope, faStar, faFacebook, faTwitter);
+library.add(faUser, faEnvelope, faStar, faFacebook, faTwitter, faSearch, faBell);
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
