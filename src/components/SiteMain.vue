@@ -1,5 +1,6 @@
 
 <script>
+import infoOverlay from './infoOverlay.vue';
 import { store } from '../store';
 import { countryFlags, isoLangs } from "../data/countryFlags";
 
@@ -13,7 +14,11 @@ export default {
             store,
             countryFlags,
             isoLangs,
+            currentIndex: 0,
         }
+    },
+    components: {
+        infoOverlay
     },
     methods: {
         starVote(movie) {
@@ -73,15 +78,14 @@ export default {
                             </div>
                             <div v-if="movie.overview" class="overview">{{ first20Words(movie.overview) + "..." }}
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </li>
 
         </ul>
     </main>
+    <!-- <infoOverlay v-if="this.store.listMovies" :clickedMovie="this.store.listMovies[this.currentIndex]" /> -->
 </template>
 
 <style lang="scss" scoped></style>
