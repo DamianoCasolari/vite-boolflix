@@ -8,7 +8,6 @@ main {
     overflow: auto;
 
     ul {
-
         padding: 0;
 
         .col {
@@ -38,6 +37,8 @@ main {
             .info_container {
                 font-size: calc(16px + 0.1vw);
                 padding: 20px;
+                max-width: 100%;
+                word-wrap: break-word;
 
 
 
@@ -55,6 +56,12 @@ main {
                 .vote {
                     margin-top: 20px;
                 }
+
+                .overview {
+                    margin-top: 20px;
+                    overflow: auto;
+
+                }
             }
 
         }
@@ -67,7 +74,8 @@ main {
 .my_card {
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.5s;
+    transition: transform 0.65s;
+
 }
 
 .card_front,
@@ -77,6 +85,7 @@ main {
     height: 100%;
     backface-visibility: hidden;
     padding: 10px;
+    overflow: hidden;
 }
 
 .card_back {
