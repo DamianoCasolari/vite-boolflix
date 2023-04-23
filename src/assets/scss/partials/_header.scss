@@ -15,6 +15,7 @@ header {
 
         .logo_container {
             height: 100%;
+            cursor: pointer;
 
             .bigLogo {
                 height: 100px;
@@ -52,6 +53,15 @@ header {
                 color: $clr_light;
                 border-bottom: 1px solid $clr_light !important;
 
+
+            }
+
+            .fa_s {
+                transition-duration: 0.5s;
+            }
+
+            .click {
+                transform: scale(1.1);
             }
 
             #searchInput {

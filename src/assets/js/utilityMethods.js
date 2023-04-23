@@ -8,6 +8,17 @@ export function clickEffect(e) {
 
 }
 
+// STatistics adviced
+// .fa_s {
+//     transition-duration: 0.5s;
+// }
+
+// .click {
+//     transform: scale(1.2);
+// }
+
+//-------------------------------------------------------------------------------------
+
 // Show an section with Scroll
 
 export function appearWithScroll(element) {
@@ -23,3 +34,6 @@ export function appearWithScroll(element) {
         }
     })
 };
+
+//-------------------------------------------------------------------------------------
+

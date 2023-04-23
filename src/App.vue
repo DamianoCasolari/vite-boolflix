@@ -25,7 +25,9 @@ export default {
       });
     });
 
-  }
+    store.getIdList()
+    store.getTvIdList()
+  },
 }
 </script>
 

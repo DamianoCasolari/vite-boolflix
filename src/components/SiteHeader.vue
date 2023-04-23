@@ -1,25 +1,24 @@
 <script>
 // import CountryFlag from 'vue-country-flag'
 import { store } from "../store.js";
-import { appearWithScroll } from '../assets/js/utilityMethods.js';
+import { appearWithScroll, clickEffect } from '../assets/js/utilityMethods.js';
 
 
 export default {
     data() {
         return {
             store,
-            appearWithScroll
+            appearWithScroll,
+            clickEffect
         }
     },
     methods: {
-        scrollFunction() {
-            const section = document.querySelector(".header")
-            appearWithScroll(section)
+        reload() {
+            location.reload()
         }
-    }, mounted() {
-        this.scrollFunction()
 
     }
+
 }
 </script>
 
@@ -27,7 +26,7 @@ export default {
 <template>
     <header class="header container-fluid d-flex justify-content-between align-items-center">
         <nav class="d-flex align-items-center">
-            <div class="logo_container d-flex justify-content-center align-items-center ">
+            <div class="logo_container d-flex justify-content-center align-items-center" @click="reload()">
                 <img class="bigLogo d-none d-md-inline-block" src="../assets/img/Netflix-Logo_preview_rev_1.png"
                     alt="netflix">
                 <img class="smallLogo d-inline-block d-md-none" src="../assets/img/Netflix-Logo-2006.png" alt="netflix">
@@ -45,8 +44,8 @@ export default {
         </nav>
         <div class="profile_zone d-flex align-items-center">
             <div class="form-group search_container d-flex">
-                <button for="searchInput" @click="store.searchMovie(store.API_URL)"><font-awesome-icon
-                        icon="search" /></button>
+                <button for="searchInput" @click="store.searchMovie(store.API_URL)"><font-awesome-icon icon="search"
+                        class="fa_s" @click="clickEffect" /></button>
                 <input @keyup.enter="store.searchMovie(store.API_URL)" id="searchInput" class="form-control border-0"
                     type="text" placeholder="search" v-model="store.nameMovie">
             </div>
