@@ -10,7 +10,7 @@
 import { faHourglassStart, faHourglassHalf, faHourglassEnd } from '@fortawesome/free-solid-svg-icons'
 
 export default {
-    name: "LoadingIcons",
+    name: "WaitingIcons",
     data() {
         return {
             icons: [faHourglassStart, faHourglassHalf, faHourglassEnd],

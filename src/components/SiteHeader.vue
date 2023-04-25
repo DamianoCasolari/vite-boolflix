@@ -2,6 +2,7 @@
 // import CountryFlag from 'vue-country-flag'
 import { store } from "../store.js";
 import { appearWithScroll, clickEffect } from '../assets/js/utilityMethods.js';
+import GenresMenu from "./GenresMenu.vue";
 
 
 export default {
@@ -9,13 +10,32 @@ export default {
         return {
             store,
             appearWithScroll,
-            clickEffect
+            clickEffect,
         }
+    },
+    components: {
+        GenresMenu
     },
     methods: {
         reload() {
             location.reload()
-        }
+        },
+        changeInTvList(index) {
+            this.store.listMovies.forEach((movie) => {
+                movie.visible = true
+                if (movie.typeShow !== "tv") {
+                    movie.visible = false
+                }
+            })
+        },
+        changeInMovieList(index) {
+            this.store.listMovies.forEach((movie) => {
+                movie.visible = true
+                if (movie.typeShow !== "film") {
+                    movie.visible = false
+                }
+            })
+        },
 
     }
 
@@ -31,16 +51,10 @@ export default {
                     alt="netflix">
                 <img class="smallLogo d-inline-block d-md-none" src="../assets/img/Netflix-Logo-2006.png" alt="netflix">
             </div>
-            <div class="classes d-none d-lg-block">
 
-                <a href="#"><span>Home</span></a>
-                <a href="#"><span>Serie tv</span></a>
-                <a href="#"><span>Film</span></a>
-                <a href="#"><span>Originali</span></a>
-                <a href="#"><span>Aggiunti di recente</span></a>
-                <a href="#"><span>La mia lista</span></a>
+            <GenresMenu @checkTvShow="changeInTvList()" @returnHome="reload()" @checkMovieShow="changeInMovieList()" />
+            <!-- <GenresMenu /> -->
 
-            </div>
         </nav>
         <div class="profile_zone d-flex align-items-center">
             <div class="form-group search_container d-flex">

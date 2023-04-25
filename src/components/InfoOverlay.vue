@@ -19,16 +19,13 @@ export default {
         clickedMovie: Object,
         castList: Array,
         genresIdList: Array,
-        genresTvIdList: Array
+        genresTvIdList: Array,
+        starVote: Function,
+        starEmpty: Function
 
 
     },
     methods: {
-        starVote(movie) {
-            return Math.round(movie.vote_average / 2)
-        }, starEmpty(movie) {
-            return 5 - Math.round(movie.vote_average / 2)
-        },
         filter5Actors(array) {
             const popularityArray = array.sort((a, b) => b.popularity - a.popularity)
             const limitedArray = popularityArray.slice(0, 10)
@@ -73,8 +70,8 @@ export default {
             <!-- ratings  -->
             <div class="vote">{{ "Rating " + (clickedMovie.vote_average / 2).toFixed(2) }}</div>
             <div id="index" class="stars_vote">
-                <font-awesome-icon class="text-warning" icon="star" v-for="icon in this.starVote(clickedMovie)" />
-                <font-awesome-icon icon="star" v-for="icon in this.starEmpty(clickedMovie)" />
+                <font-awesome-icon class="text-warning" icon="star" v-for="icon in starVote(clickedMovie)" />
+                <font-awesome-icon icon="star" v-for="icon in starEmpty(clickedMovie)" />
             </div>
 
             <!-- Movie genres  -->

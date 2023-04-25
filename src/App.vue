@@ -18,6 +18,18 @@ export default {
     }
   },
   mounted() {
+
+    // get updated genre id list (both tv and film)
+
+    store.getIdList()
+    store.getTvIdList()
+
+    // get updated trending movie list 
+
+    store.getTrendigMovies(store.API_URL)
+
+    // blocks all anchor tags from the default behavior
+
     const anchorTags = document.querySelectorAll('a[href="#"]');
     anchorTags.forEach(a => {
       a.addEventListener('click', event => {
@@ -25,8 +37,6 @@ export default {
       });
     });
 
-    store.getIdList()
-    store.getTvIdList()
   },
 }
 </script>

@@ -17,11 +17,12 @@ main {
     ul {
         padding: 0;
 
-        .col {
+        .my_card {
             color: $clr_light;
             margin-bottom: 20px;
             padding: 20px;
             height: 513px;
+            display: flex;
 
 
             .Cover_container img {

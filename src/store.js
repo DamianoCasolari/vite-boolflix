@@ -1,15 +1,28 @@
 import axios from "axios";
 
 export const store = {
+    listMovieTrending: [],
     nameMovie: "",
     listMovies: [],
+    listTvShow: [],
+    listCinemaMovies: [],
     API_URL: "https://api.themoviedb.org",
     language_url: "https://flagcdn.com/en/codes.json",
     image_url: "https://image.tmdb.org/t/p/w342",
     starList: [],
     genreIdList: [],
     genreTvIdList: [],
+    menuIndex: 0,
     loading: false,
+
+    // ajax to load all the trending movies from the movie db database  
+
+    getTrendigMovies(image_url) {
+        axios.get(image_url + "/3/trending/all/day?api_key=70c8282706a34ee4687ab6063a6b0245&media_type=movie&time_window=week").then((movies) => {
+            this.listMovieTrending = movies.data.results
+        })
+    },
+
 
 
     // ajax to load all the movies from the movie db database connected to the search input 
@@ -22,8 +35,16 @@ export const store = {
         ]).then(response => {
             const movies = response[0].data.results
             const tv = response[1].data.results
-            console.log(movies);
-            console.log(tv);
+            this.listCinemaMovies = [...movies]
+            this.listCinemaMovies.forEach((object) => {
+                object.typeShow = "film"
+                object.visible = true
+            })
+            this.listTvShow = [...tv]
+            this.listTvShow.forEach((object) => {
+                object.typeShow = "tv"
+                object.visible = true
+            })
             this.listMovies = [...movies, ...tv]
             this.loading = false
 
