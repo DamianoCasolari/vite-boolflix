@@ -36,9 +36,7 @@ export default {
                 }
             })
         },
-
     }
-
 }
 </script>
 
@@ -52,14 +50,15 @@ export default {
                 <img class="smallLogo d-inline-block d-md-none" src="../assets/img/Netflix-Logo-2006.png" alt="netflix">
             </div>
 
-            <GenresMenu @checkTvShow="changeInTvList()" @returnHome="reload()" @checkMovieShow="changeInMovieList()" />
+            <GenresMenu @checkTvShow="changeInTvList()" @returnHome="store.homeclicked = true"
+                @checkMovieShow="changeInMovieList()" />
             <!-- <GenresMenu /> -->
 
         </nav>
         <div class="profile_zone d-flex align-items-center">
             <div class="form-group search_container d-flex">
-                <button for="searchInput" @click="store.searchMovie(store.API_URL)"><font-awesome-icon icon="search"
-                        class="fa_s" @click="clickEffect" /></button>
+                <button class="search_b" for="searchInput" @click="store.searchMovie(store.API_URL)"><font-awesome-icon
+                        icon="search" class="fa_s" @click="clickEffect" /></button>
                 <input @keyup.enter="store.searchMovie(store.API_URL)" id="searchInput" class="form-control border-0"
                     type="text" placeholder="search" v-model="store.nameMovie">
             </div>

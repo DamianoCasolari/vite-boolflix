@@ -63,7 +63,10 @@ export default {
             this.currentIndex = -1
             this.clicked = false
 
-        }
+        },
+
+
+
     }
 }
 </script>
@@ -72,21 +75,30 @@ export default {
 <template>
     <main>
 
-        <!-- RANDOM TRENDIND SLIDER MOVIE   -->
+        <!-- SHOWCASE FOR TRENDIND MOVIES (SLIDER)   -->
 
-        <div v-if="store.loading == false && store.listMovies.length == 0 && store.getTrendigMovies.length != 0">
-            <ShowcaseSlider />
+        <div v-if="store.loading == false && store.listMovies.length == 0 && store.listMovieTrending.length != 0 && store.homeclicked == false"
+            class="slider_container">
+            <ShowcaseSlider :store="store" />
+
+        </div>
+
+        <!-- HOME -->
+        <div class="text-white"
+            v-else-if="store.loading == false && store.listMovies.length == 0 && store.listMovieTrending.length != 0 && store.homeclicked == true">
+            <div>HOME WORKING IN PROGRESS</div>
 
         </div>
 
         <!-- LOADING ICON  -->
 
-        <WaitingIcons v-else-if="store.loading == true && store.listMovies.length == 0" />
+        <WaitingIcons v-else-if="store.loading == true" />
 
 
         <!-- MOVIES LIST  -->
 
-        <ul class="d-flex flex-wrap align-items-center justify-content-start" v-else>
+        <ul class="d-flex flex-wrap align-items-center justify-content-start"
+            v-else-if="store.loading == false && store.listMovies.length != 0">
 
             <!-- SINGLE COVER MOVIE  -->
 

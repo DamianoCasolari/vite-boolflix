@@ -17,6 +17,15 @@ export default {
       store
     }
   },
+
+  // Pagliativo perchè le immagini dello slider non caricano all'inizio 
+
+  methods: {
+    fakeClick() {
+      const search = document.querySelector(".search_b")
+      search.click()
+    }
+  },
   mounted() {
 
     // get updated genre id list (both tv and film)
@@ -37,7 +46,9 @@ export default {
       });
     });
 
-  },
+    this.fakeClick()
+
+  }
 }
 </script>
 

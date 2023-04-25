@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const store = {
     listMovieTrending: [],
+    homeclicked: false,
     nameMovie: "",
     listMovies: [],
     listTvShow: [],
@@ -9,6 +10,7 @@ export const store = {
     API_URL: "https://api.themoviedb.org",
     language_url: "https://flagcdn.com/en/codes.json",
     image_url: "https://image.tmdb.org/t/p/w342",
+    trending_url: "https://image.tmdb.org/t/p/original",
     starList: [],
     genreIdList: [],
     genreTvIdList: [],
@@ -22,6 +24,9 @@ export const store = {
             this.listMovieTrending = movies.data.results
         })
     },
+    getTrandingImage(movie) {
+        return this.trending_url + movie.backdrop_path
+    },
 
 
 
@@ -29,6 +34,7 @@ export const store = {
 
     searchMovie(url) {
         this.loading = true
+        this.homeclicked = false
         axios.all([
             axios.get(url + `/3/search/movie?api_key=70c8282706a34ee4687ab6063a6b0245&language=en-US&page=1&include_adult=false&query=${this.nameMovie}`),
             axios.get(url + `/3/search/tv?api_key=70c8282706a34ee4687ab6063a6b0245&language=en-US&page=1&include_adult=false&query=${this.nameMovie}`)
@@ -84,7 +90,7 @@ export const store = {
     getIdList() {
         axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=70c8282706a34ee4687ab6063a6b0245&language=en-US`)
             .then((id_list) => {
-
+                this.homeclicked = false
                 this.genreIdList = id_list.data.genres
 
             }
@@ -93,7 +99,7 @@ export const store = {
     getTvIdList() {
         axios.get(`https://api.themoviedb.org/3/genre/tv/list?api_key=70c8282706a34ee4687ab6063a6b0245&language=en-US`)
             .then((id_list) => {
-
+                this.homeclicked = false
                 this.genreTvIdList = id_list.data.genres
 
             }
