@@ -1,7 +1,14 @@
-# Vue 3 + Vite
+## Netflix site copy based on themovedb.org API
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+    Created with Vite-Vue.js 3 in combination with Bootsrap,Google font, Sass
+    
 
-## Recommended IDE Setup
+## Features included 
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+fully responsive from smartphone to desktop
+
+an initial showcase with the trending films of the week
+
+the ability to search for any movie or TV series
+
+presentation poster responsive to mouse overlay and if clicked a response modal will appear with details of the film and photos of the most popular actors inside
