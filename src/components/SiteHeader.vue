@@ -20,7 +20,7 @@ export default {
         reload() {
             location.reload()
         },
-        changeInTvList(index) {
+        changeInTvList() {
             this.store.listMovies.forEach((movie) => {
                 movie.visible = true
                 if (movie.typeShow !== "tv") {
@@ -28,7 +28,7 @@ export default {
                 }
             })
         },
-        changeInMovieList(index) {
+        changeInMovieList() {
             this.store.listMovies.forEach((movie) => {
                 movie.visible = true
                 if (movie.typeShow !== "film") {
